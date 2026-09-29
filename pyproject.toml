@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neuro-utils"
+version = "0.1.0"
+description = "Python utilities for 32k fsLR CIFTI data: file I/O, HCP atlas loading and map-to-map correlation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = ["neuroimaging", "cifti", "fmri", "hcp", "nibabel"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Programming Language :: Python :: 3",
+]
+authors = [
+    { name = "Ozan Vardal" },
+]
+dependencies = [
+    "numpy",
+    "nibabel>=5.0",
+]
+
+[project.urls]
+Repository = "https://github.com/ozvar/neuro_utils"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/neuro_utils"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
